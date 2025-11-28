@@ -1,0 +1,7 @@
+[project]
+name = "dsa"
+version = "0.1.0"
+description = "Learn Data Structures and Algorithems"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
