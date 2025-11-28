@@ -74,8 +74,4 @@ class TestFindMaximun(unittest.TestCase):
     def test_empty_list_raises(self):
         """Empty input list must raise ValueError."""
         with self.assertRaises(ValueError):
-            find_minimun([])
-
-
-if __name__ == "__main__":
-    unittest.main()
+            find_maximum([])

@@ -1,3 +1,6 @@
+from math import log
+
+
 def find_minimun(nums: list[int]) -> float:
     """
     Finds the minimum value in a list of integers.
