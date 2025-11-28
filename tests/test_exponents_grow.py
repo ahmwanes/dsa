@@ -1,6 +1,7 @@
 import unittest
 
 from exponents_grow import (
+    average_followers,
     decayed_followers,
     get_follower_prediction,
     get_influencer_score,
@@ -82,3 +83,25 @@ class TestLogScale(unittest.TestCase):
         base = 2
         expected = [0.0, 1.0, 2.0, 3.0]
         self.assertEqual(log_scale(data, base), expected)
+
+
+class TestAverageFollowers(unittest.TestCase):
+    def test_provided_cases(self):
+        """Test a variety of inputs and expected averages (integer division)."""
+        cases = [
+            ([1], 1),
+            ([1, 2, 3, 4, 5, 6, 7], 4),
+            ([12, 12, 12], 12),
+            ([], None),
+            ([0], 0),
+            ([100, 200, 300, 400, 500], 300),
+            ([5, 10, 200, 3000, 5000], 1643),
+            (
+                [12345, 618222, 58832221, 2180831475, 8663863102],
+                2180831473,
+            ),
+        ]
+
+        for nums, expected in cases:
+            with self.subTest(nums=nums):
+                self.assertEqual(average_followers(nums), expected)

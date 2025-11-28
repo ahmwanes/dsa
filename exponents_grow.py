@@ -93,3 +93,9 @@ def log_scale(data: list[int], base: int) -> list[int]:
         scale.append(round(s))
 
     return scale
+
+
+def average_followers(nums: list[int]) -> int | None:
+    if len(nums) == 0:
+        return None
+    return sum(nums) // len(nums)
